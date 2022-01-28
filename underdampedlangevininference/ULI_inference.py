@@ -13,7 +13,7 @@ import numpy as np
 
 from UnderdampedLangevinInference.underdampedlangevininference.ULI_bases.ULI_bases import basis_selector
 from UnderdampedLangevinInference.underdampedlangevininference.ULI_projectors.ULI_projectors import TrajectoryProjectors
-
+from UnderdampedLangevinInference.underdampedlangevininference.ULI_langevin.ULI_langevin import UnderdampedLangevinProcess
 
 class UnderdampedLangevinInference(object): 
     """This class performs the inference of force and diffusion,
@@ -230,7 +230,6 @@ class UnderdampedLangevinInference(object):
         ansatz force field and similar time series and initial
         conditions as the input data.
         """
-        from ULI_langevin import UnderdampedLangevinProcess
         if tlist is None:
             tlist = self.data.t
         if hasattr(self,'D_ansatz'): 
